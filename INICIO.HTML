@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión — American Land</title>
+  <link rel="stylesheet" href="ESTILOS.CSS">
+  <style>
+    /* Starfield decorative */
+    .star-float {
+      position: absolute; pointer-events: none; opacity: .18;
+      animation: float 6s ease-in-out infinite alternate;
+    }
+    @keyframes float {
+      from { transform: translateY(0) rotate(0deg); }
+      to   { transform: translateY(-14px) rotate(10deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-page">
+    <!-- Decorative blobs -->
+    <div class="deco deco-1" aria-hidden="true"></div>
+    <div class="deco deco-2" aria-hidden="true"></div>
+    <div class="deco deco-3" aria-hidden="true"></div>
+
+    <!-- Floating stars -->
+    <span class="star-float" style="top:12%;left:8%;font-size:28px;color:var(--red);" aria-hidden="true">★</span>
+    <span class="star-float" style="top:20%;right:10%;font-size:20px;color:var(--blue);animation-delay:1s;" aria-hidden="true">☆</span>
+    <span class="star-float" style="bottom:18%;left:12%;font-size:24px;color:var(--blue-light);animation-delay:2s;" aria-hidden="true">★</span>
+    <span class="star-float" style="bottom:25%;right:8%;font-size:18px;color:var(--red-light);animation-delay:.5s;" aria-hidden="true">☆</span>
+    <span class="star-float" style="top:50%;left:3%;font-size:14px;color:var(--gold);animation-delay:1.5s;" aria-hidden="true">★</span>
+
+    <div class="auth-box animate-in">
+      <div class="auth-logo">
+        <div class="auth-logo">
+    <img src="LOGO.png" alt="American Land Logo" class="logo-american">
+</div>
+    <!-- Stars ring -->
+          <g fill="#fff" font-size="7" text-anchor="middle">
+            <text transform="rotate(-80 45 45) translate(45 16)"></text>
+            <text transform="rotate(-40 45 45) translate(45 16)"></text>
+            <text transform="rotate(0  45 45)  translate(45 16)"></text>
+            <text transform="rotate(40 45 45)  translate(45 16)"></text>
+            <text transform="rotate(80 45 45)  translate(45 16)"></text>
+            <text transform="rotate(120 45 45) translate(45 16)"></text>
+            <text transform="rotate(160 45 45) translate(45 16)"></text>
+            <text transform="rotate(200 45 45) translate(45 16)"></text>
+            <text transform="rotate(240 45 45) translate(45 16)"></text>
+          </g>
+          <text x="45" y="44" fill="#C0392B" font-size="8" font-weight="bold" text-anchor="middle" font-family="serif">AMERICAN</text>
+          <text x="45" y="54" fill="#C0392B" font-size="9" font-weight="bold" text-anchor="middle" font-family="serif">LAND</text>
+          <text x="45" y="63" fill="#fff" font-size="5" text-anchor="middle" font-family="sans-serif">ENGLISH ACADEMY</text>
+        </svg>
+      </div>
+
+      <h1 class="auth-title">Iniciar Sesión</h1>
+
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label class="form-label" for="email">
+            <span aria-hidden="true">✉️</span> Correo electrónico
+          </label>
+          <input
+            class="form-control" type="email" id="email" name="email"
+            placeholder="Ingresa tu correo electrónico"
+            required autocomplete="email"
+            aria-describedby="email-hint"
+          >
+          <span id="email-hint" class="sr-only">Ingresa el correo con el que te registraste</span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">
+            <span aria-hidden="true">🔒</span> Contraseña
+          </label>
+          <input
+            class="form-control" type="password" id="password" name="password"
+            placeholder="Ingresa tu contraseña"
+            required autocomplete="current-password"
+          >
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="rol">
+            <span aria-hidden="true">👤</span> Rol
+          </label>
+          <select class="form-control" id="rol" name="rol" required aria-required="true">
+            <option value="">Selecciona tu rol</option>
+            <option value="alumno">Alumno</option>
+            <option value="docente">Docente</option>
+            <option value="admin">Administrador</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:13px;">
+          Iniciar Sesión
+        </button>
+      </form>
+
+      <div class="auth-footer">
+        <a href="#">¿Olvidaste tu contraseña?</a><br>
+        ¿No tienes una cuenta? <a href="REGISTRO.HTML">Regístrate</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="APP.JS"></script>
+</body>
+</html>

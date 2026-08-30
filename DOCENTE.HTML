@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Docentes — American Land</title>
+  <link rel="stylesheet" href="ESTILOS.CSS">
+</head>
+<body>
+<div class="dash-layout">
+
+  <header class="dash-nav" role="banner">
+    <div class="nav-brand">
+      <svg width="32" height="32" viewBox="0 0 90 90" aria-hidden="true">
+        <circle cx="45" cy="45" r="44" fill="#1A2A6C"/>
+        <text x="45" y="49" fill="#C0392B" font-size="14" font-weight="bold" text-anchor="middle" font-family="serif">AL</text>
+      </svg>
+      <span>Docentes</span>
+    </div>
+    <nav class="nav-links" aria-label="Menú docente">
+      <a href="DOCENTE.HTML" class="active" aria-current="page">Inicio</a>
+      <span class="sep" aria-hidden="true">|</span>
+      <a href="DOCENTE NOTAS.HTML">Notas</a>
+      <span class="sep" aria-hidden="true">|</span>
+      <a href="#">Horario</a>
+      <span class="sep" aria-hidden="true">|</span>
+      <a href="#">Tareas</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" aria-label="Mensajes">💬</button>
+      <a href="INDEX/HTLM" class="nav-icon-btn" aria-label="Cerrar sesión">⏏</a>
+    </div>
+  </header>
+
+  <aside class="dash-sidebar" role="complementary" aria-label="Panel lateral">
+    <p class="sidebar-section-title">Mis Clases</p>
+    <div class="sidebar-item active" data-page="canada">
+      <span class="dot" style="background:#c92310;" aria-hidden="true"></span>
+      Salón Canada
+    </div>
+    <div class="sidebar-item" data-page="nz">
+      <span class="dot" style="background:#0f86d6;" aria-hidden="true"></span>
+      Salón Nueva Zelanda
+    </div>
+    <div class="sidebar-item" data-page="miami">
+      <span class="dot" style="background:#a213e0;" aria-hidden="true"></span>
+      Salón Miami
+    </div>
+
+    <p class="sidebar-section-title">Accesos Rápidos</p>
+    <a class="sidebar-item" href="DOCENTE NOTAS.HTML" style="text-decoration:none;">
+      <span class="item-icon" aria-hidden="true">📝</span> Ingresar Notas
+    </a>
+    <div class="sidebar-item">
+      <span class="item-icon" aria-hidden="true">📋</span> Ver Tareas
+    </div>
+    <div class="sidebar-item">
+      <span class="item-icon" aria-hidden="true">📅</span> Mi Horario
+    </div>
+  </aside>
+
+  <main class="dash-main" role="main">
+    <div class="section-head">
+      <div>
+        <h2>Salón Canada</h2>
+        <p>L-M-M-J &nbsp;8:00AM – 12:00PM &nbsp;·&nbsp; 40 Horas</p>
+      </div>
+      <a href="DOCENTE NOTAS.HTML" class="btn btn-primary">
+        ＋ Ingresar Nota
+      </a>
+    </div>
+
+    <div class="stats-row" role="list" aria-label="Estadísticas del salón">
+      <div class="stat-card animate-in" role="listitem">
+        <div class="stat-label">Alumnos</div>
+        <div class="stat-value">14</div>
+        <div class="stat-sub">Activos este ciclo</div>
+      </div>
+      <div class="stat-card animate-in delay-1" role="listitem">
+        <div class="stat-label">Promedio Grupal</div>
+        <div class="stat-value">3.9</div>
+        <div class="stat-sub">Sobre 5.0</div>
+      </div>
+      <div class="stat-card animate-in delay-2" role="listitem">
+        <div class="stat-label">Horas</div>
+        <div class="stat-value">20<small style="font-size:14px;color:var(--gray-400)">/40</small></div>
+        <div class="stat-sub">50% de avance</div>
+      </div>
+      <div class="stat-card animate-in delay-3" role="listitem">
+        <div class="stat-label">Tareas</div>
+        <div class="stat-value">3</div>
+        <div class="stat-sub">Pendientes de revisión</div>
+      </div>
+    </div>
+
+    <!-- Resumen alumnos table -->
+    <div class="panel animate-in" style="margin-top:4px;">
+      <div class="panel-header">
+        <h3>Resumen Alumnos</h3>
+        <a href="DOCENTE NOTAS.HTML" class="btn btn-outline btn-sm">Ver todas las notas</a>
+      </div>
+      <table class="data-table" aria-label="Resumen de alumnos del salón">
+        <thead>
+          <tr>
+            <th scope="col">Alumno</th>
+            <th scope="col">Asistencia</th>
+            <th scope="col">Última Nota</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Davis Morales</td>
+            <td>92%</td>
+            <td><strong>5.0</strong></td>
+            <td><span class="badge badge-green">Excelente</span></td>
+            <td><button class="btn btn-outline btn-sm" style="font-size:12px;padding:4px 10px;">Ver detalle</button></td>
+          </tr>
+          <tr>
+            <td>Sofia Martínez</td>
+            <td>88%</td>
+            <td><strong>4.5</strong></td>
+            <td><span class="badge badge-green">Bueno</span></td>
+            <td><button class="btn btn-outline btn-sm" style="font-size:12px;padding:4px 10px;">Ver detalle</button></td>
+          </tr>
+          <tr>
+            <td>Raúl González</td>
+            <td>75%</td>
+            <td><strong>3.2</strong></td>
+            <td><span class="badge badge-yellow">Regular</span></td>
+            <td><button class="btn btn-outline btn-sm" style="font-size:12px;padding:4px 10px;">Ver detalle</button></td>
+          </tr>
+          <tr>
+            <td>Tomás Ospina</td>
+            <td>60%</td>
+            <td><strong>2.8</strong></td>
+            <td><span class="badge badge-red">En riesgo</span></td>
+            <td><button class="btn btn-red btn-sm" style="font-size:12px;padding:4px 10px;">Contactar</button></td>
+          </tr>
+          <tr>
+            <td>Ana Torres</td>
+            <td>95%</td>
+            <td><strong>4.8</strong></td>
+            <td><span class="badge badge-green">Excelente</span></td>
+            <td><button class="btn btn-outline btn-sm" style="font-size:12px;padding:4px 10px;">Ver detalle</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+</div>
+
+<script src="APP.JS"></script>
+</body>
+</html>

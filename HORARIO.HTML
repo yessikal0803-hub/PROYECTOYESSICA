@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admisiones — American Land</title>
+  <link rel="stylesheet" href="ESTILOS.CSS">
+  <style>
+    .star-float { position:absolute;pointer-events:none;opacity:.14;animation:float 6s ease-in-out infinite alternate; }
+    @keyframes float { from{transform:translateY(0)} to{transform:translateY(-12px)} }
+  </style>
+</head>
+<body>
+  <div class="auth-page" style="align-items:flex-start;padding:40px 16px 80px;">
+    <div class="deco deco-1" aria-hidden="true"></div>
+    <div class="deco deco-2" aria-hidden="true"></div>
+    <span class="star-float" style="top:8%;left:5%;font-size:28px;color:var(--blue);" aria-hidden="true">★</span>
+    <span class="star-float" style="top:15%;right:7%;font-size:20px;color:var(--red);animation-delay:1s;" aria-hidden="true">☆</span>
+    <span class="star-float" style="bottom:15%;left:8%;font-size:24px;color:var(--blue-light);animation-delay:2s;" aria-hidden="true">★</span>
+    <span class="star-float" style="bottom:18%;right:5%;font-size:16px;color:var(--gold);animation-delay:.5s;" aria-hidden="true">★</span>
+
+    <div class="auth-box animate-in" style="max-width:620px;width:100%;position:relative;z-index:1;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px;">
+        <a href="INICIO.HTML" class="btn btn-outline btn-sm" style="font-size:12px;">← Volver</a>
+        <h1 class="auth-title" style="margin-bottom:0;text-align:left;flex:1;">Proceso de Admisión</h1>
+      </div>
+
+      <form id="horario-form" novalidate>
+
+        <!-- Nivel -->
+        <div class="form-group">
+          <label class="form-label" for="nivel-sel">Nivel de Inglés</label>
+          <select class="form-control" id="nivel-sel" name="nivel" required>
+            <option value="">Selecciona tu nivel</option>
+            <option value="a1">Beginner (A1)</option>
+            <option value="a2">Elementary (A2)</option>
+            <option value="b1">Intermediate (B1)</option>
+            <option value="b2">Upper Intermediate (B2)</option>
+            <option value="c1">Advanced (C1)</option>
+            <option value="c2">Proficient (C2)</option>
+          </select>
+        </div>
+
+        <!-- Horario preferido -->
+        <fieldset style="border:none;padding:0;margin-bottom:20px;">
+          <legend class="form-label" style="font-size:15px;margin-bottom:12px;">Horario Preferido</legend>
+          <div class="horario-grid">
+            <label class="horario-option" for="h1">
+              <input type="checkbox" id="h1" name="horario" value="manana">
+              <div>
+                <strong>☀️ Mañana</strong>
+                <span>Lunes a Viernes (7:00 AM – 12:00 PM)</span>
+              </div>
+            </label>
+            <label class="horario-option" for="h2">
+              <input type="checkbox" id="h2" name="horario" value="tarde">
+              <div>
+                <strong>🌤️ Tarde</strong>
+                <span>Lunes a Viernes (2:00 PM – 5:00 PM)</span>
+              </div>
+            </label>
+            <label class="horario-option" for="h3">
+              <input type="checkbox" id="h3" name="horario" value="noche">
+              <div>
+                <strong>🌙 Noche</strong>
+                <span>Lunes a Viernes (6:00 PM – 9:00 PM)</span>
+              </div>
+            </label>
+            <label class="horario-option" for="h4">
+              <input type="checkbox" id="h4" name="horario" value="finde">
+              <div>
+                <strong>📅 Fin de Semana</strong>
+                <span>Sábado (9:00 AM – 1:00 PM)</span>
+              </div>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- Método de pago -->
+        <fieldset style="border:none;padding:0;margin-bottom:28px;">
+          <legend class="form-label" style="font-size:15px;margin-bottom:12px;">Método de Pago</legend>
+          <div class="pago-options">
+            <label class="pago-option" for="p1">
+              <input type="radio" id="p1" name="pago" value="tarjeta" style="width:16px;height:16px;accent-color:var(--blue);">
+              <span class="pago-icon">💳</span>
+              <div>
+                <strong>Tarjeta de Crédito / Débito</strong>
+                <span>Visa, Mastercard, American Express, etc.</span>
+              </div>
+            </label>
+            <label class="pago-option" for="p2">
+              <input type="radio" id="p2" name="pago" value="pse" style="width:16px;height:16px;accent-color:var(--blue);">
+              <span class="pago-icon">🏦</span>
+              <div>
+                <strong>PSE</strong>
+                <span>Pago seguro en línea desde tu cuenta bancaria.</span>
+              </div>
+            </label>
+            <label class="pago-option" for="p3">
+              <input type="radio" id="p3" name="pago" value="transferencia" style="width:16px;height:16px;accent-color:var(--blue);">
+              <span class="pago-icon">📲</span>
+              <div>
+                <strong>Transferencia / Billetera Digital</strong>
+                <span>Transferencia directa o aplicaciones digitales.</span>
+              </div>
+            </label>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:13px;">
+          Enviar Solicitud de Admisión
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="APP.JS"></script>
+</body>
+</html>

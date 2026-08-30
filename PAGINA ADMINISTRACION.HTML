@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel Administración — American Land</title>
+  <link rel="stylesheet" href="ESTILOS.CSS">
+  <style>
+    /* Admin overrides */
+    :root { --sidebar-w: 210px; }
+    .dash-nav .nav-brand span { color: var(--gray-800); }
+    .dash-sidebar .sidebar-item.active { background:#FFF0EE; color: var(--red); }
+  </style>
+</head>
+<body>
+<div class="dash-layout">
+
+  <header class="dash-nav" role="banner">
+    <div class="nav-brand">
+      <svg width="32" height="32" viewBox="0 0 90 90" aria-hidden="true">
+        <circle cx="45" cy="45" r="44" fill="#1A2A6C"/>
+        <text x="45" y="49" fill="#C0392B" font-size="14" font-weight="bold" text-anchor="middle" font-family="serif">AL</text>
+      </svg>
+      <span>Admin</span>
+    </div>
+    <nav class="nav-links" aria-label="Menú administración">
+      <a href="PAGINA ADMINISTRACION.HTML" class="active" style="color:var(--red);" aria-current="page">Inicio</a>
+      <span class="sep" aria-hidden="true">|</span>
+      <a href="#">Docentes</a>
+      <span class="sep" aria-hidden="true">|</span>
+      <a href="#">Alumnos</a>
+      <span class="sep" aria-hidden="true">|</span>
+      <a href="PAGINA ADM ALUM MATRI.HTML">Matrículas</a>
+      <span class="sep" aria-hidden="true">|</span>
+      <a href="#">Salones</a>
+      <span class="sep" aria-hidden="true">|</span>
+      <a href="#">Reportes</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" aria-label="Mensajes">💬</button>
+      <a href="INDEX/HTLM" class="nav-icon-btn" aria-label="Cerrar sesión">⏏</a>
+    </div>
+  </header>
+
+  <aside class="dash-sidebar" role="complementary" aria-label="Menú lateral administración">
+    <p class="sidebar-section-title">General</p>
+    <div class="sidebar-item active" data-page="inicio">
+      <span class="item-icon" aria-hidden="true">🏠</span> Inicio
+    </div>
+    <div class="sidebar-item" data-page="reportes">
+      <span class="item-icon" aria-hidden="true">📊</span> Reportes
+    </div>
+
+    <p class="sidebar-section-title">Personas</p>
+    <div class="sidebar-item" data-page="docentes">
+      <span class="item-icon" aria-hidden="true">👨‍🏫</span> Docentes
+    </div>
+    <div class="sidebar-item" data-page="alumnos">
+      <span class="item-icon" aria-hidden="true">👨‍🎓</span> Alumnos
+    </div>
+
+    <p class="sidebar-section-title">Académico</p>
+    <a class="sidebar-item" href="PAGINA ADM ALUM MATRI.HTML" style="text-decoration:none;">
+      <span class="item-icon" aria-hidden="true">📝</span> Matrículas
+    </a>
+    <div class="sidebar-item" data-page="salones">
+      <span class="item-icon" aria-hidden="true">🏫</span> Salones
+    </div>
+
+    <p class="sidebar-section-title">Config</p>
+    <div class="sidebar-item" data-page="usuarios">
+      <span class="item-icon" aria-hidden="true">👥</span> Usuarios
+    </div>
+    <div class="sidebar-item" data-page="config">
+      <span class="item-icon" aria-hidden="true">⚙️</span> Configuración
+    </div>
+  </aside>
+
+  <main class="dash-main" role="main">
+    <div class="section-head">
+      <div>
+        <h2>Panel De Control</h2>
+        <p>Periodo 2026 &nbsp;·&nbsp; Sede Pitalito</p>
+      </div>
+      <button id="btn-nueva-matricula" class="btn btn-primary">+ Nueva Matrícula</button>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-row" role="list" aria-label="Estadísticas generales">
+      <div class="stat-card animate-in" role="listitem">
+        <div class="stat-label">Total Alumnos</div>
+        <div class="stat-value">50</div>
+        <div class="stat-sub">Activos</div>
+      </div>
+      <div class="stat-card animate-in delay-1" role="listitem">
+        <div class="stat-label">Docentes Activos</div>
+        <div class="stat-value">6</div>
+        <div class="stat-sub">Este periodo</div>
+      </div>
+      <div class="stat-card animate-in delay-2" role="listitem">
+        <div class="stat-label">Matrículas Activas</div>
+        <div class="stat-value">15</div>
+        <div class="stat-sub">3 Pendientes</div>
+      </div>
+      <div class="stat-card animate-in delay-3" role="listitem">
+        <div class="stat-label">Salones Abiertos</div>
+        <div class="stat-value">5</div>
+        <div class="stat-sub">1 Por iniciar</div>
+      </div>
+    </div>
+
+    <div class="content-grid">
+      <!-- Salones activos -->
+      <div class="panel animate-in">
+        <div class="panel-header">
+          <h3>Salones Activos</h3>
+          <button class="btn btn-outline btn-sm">Ver todas</button>
+        </div>
+        <table class="data-table" aria-label="Salones activos">
+          <thead>
+            <tr>
+              <th scope="col">Salón</th>
+              <th scope="col">Horario</th>
+              <th scope="col">Cupos</th>
+              <th scope="col">Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Salón Canada</td>
+              <td>8:00 – 12:00</td>
+              <td>10/15</td>
+              <td><span class="badge badge-green">Activo</span></td>
+            </tr>
+            <tr>
+              <td>Salón Canada (tarde)</td>
+              <td>2:00 – 4:00</td>
+              <td>8/15</td>
+              <td><span class="badge badge-green">Activo</span></td>
+            </tr>
+            <tr>
+              <td>Salón Nueva Zelanda</td>
+              <td>6:00 – 9:00</td>
+              <td>12/15</td>
+              <td><span class="badge badge-green">Activo</span></td>
+            </tr>
+            <tr>
+              <td>Salón Miami</td>
+              <td>9:00 – 1:00</td>
+              <td>5/15</td>
+              <td><span class="badge badge-yellow">Por iniciar</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Actividad reciente -->
+      <div class="panel animate-in delay-1">
+        <div class="panel-header">
+          <h3>Actividad Reciente</h3>
+        </div>
+        <div class="panel-body">
+          <div class="activity-item" role="listitem">
+            <span class="activity-dot" style="background:#27AE60;" aria-hidden="true"></span>
+            <span>Matrícula aprobada — Sofia Martínez · Salón Canadá</span>
+          </div>
+          <div class="activity-item" role="listitem">
+            <span class="activity-dot" style="background:#068ee9;" aria-hidden="true"></span>
+            <span>Nuevo profesor registrado — Carlos Ríos</span>
+          </div>
+          <div class="activity-item" role="listitem">
+            <span class="activity-dot" style="background:#E8A838;" aria-hidden="true"></span>
+            <span>Pago pendiente — Tomás Ospina · $320,000</span>
+          </div>
+          <div class="activity-item" role="listitem">
+            <span class="activity-dot" style="background:#C0392B;" aria-hidden="true"></span>
+            <span>Matrícula cancelada — Juan Leal</span>
+          </div>
+          <div class="activity-item" role="listitem">
+            <span class="activity-dot" style="background:#27AE60;" aria-hidden="true"></span>
+            <span>Nueva matrícula — Valentina Cruz · A2</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Matrículas pendientes -->
+    <div class="panel animate-in" style="margin-top:20px;">
+      <div class="panel-header">
+        <h3>Matrículas Pendiente de Revisión</h3>
+        <span class="badge badge-yellow">3 Pendientes</span>
+      </div>
+      <table class="data-table" aria-label="Matrículas pendientes de revisión">
+        <thead>
+          <tr>
+            <th scope="col">Alumno</th>
+            <th scope="col">Salón</th>
+            <th scope="col">Horario</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Pago</th>
+            <th scope="col">Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sofia Martinez</td>
+            <td>Canada</td>
+            <td>8:00 – 12:00</td>
+            <td>29 Mayo</td>
+            <td><span class="badge badge-green status-badge">Pagado</span></td>
+            <td style="display:flex;gap:6px;padding:12px 14px;">
+              <button class="btn btn-primary btn-sm btn-aprobar">Aprobar</button>
+              <button class="btn btn-outline btn-sm btn-revisar">Revisar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Raúl Gonzalez</td>
+            <td>Nueva Zelanda</td>
+            <td>2:00 – 4:00</td>
+            <td>26 Mayo</td>
+            <td><span class="badge badge-yellow status-badge">Pendiente</span></td>
+            <td style="display:flex;gap:6px;padding:12px 14px;">
+              <button class="btn btn-primary btn-sm btn-aprobar">Aprobar</button>
+              <button class="btn btn-outline btn-sm btn-revisar">Revisar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Luis García</td>
+            <td>Miami</td>
+            <td>9:00 – 1:00</td>
+            <td>30 Mayo</td>
+            <td><span class="badge badge-yellow status-badge">Pendiente</span></td>
+            <td style="display:flex;gap:6px;padding:12px 14px;">
+              <button class="btn btn-primary btn-sm btn-aprobar">Aprobar</button>
+              <button class="btn btn-outline btn-sm btn-revisar">Revisar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<script src="APP.JS"></script>
+</body>
+</html>
